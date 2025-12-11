@@ -1,7 +1,4 @@
 "use client";
-
-// Navigation component with responsive mobile menu
-// Features: sticky navbar, smooth animations, accessible hamburger toggle
 import React, { useState } from "react";
 import Link from "next/link";
 import "./navbar.css";
@@ -9,5 +6,24 @@ import "./navbar.css";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  return <nav className="navbar"></nav>;
+  return (
+    <nav>
+      <h1>Portfolio</h1>
+
+      <div className="navLink">
+        <Link href={"/"} className="navigation">
+          About
+        </Link>
+        <Link href={"/"} className="navigation">
+          Projects
+        </Link>
+        <Link href={"/"} className="navigation">
+          Skills
+        </Link>
+        <Link href={"/"} className="navigation">
+          contact
+        </Link>
+      </div>
+    </nav>
+  );
 }
