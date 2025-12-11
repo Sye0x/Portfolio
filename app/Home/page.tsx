@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar/navbar";
-import "./section-1.css";
+import "./style.css";
 
 export default function Home() {
   const contactItems = [
@@ -30,16 +30,16 @@ export default function Home() {
   ];
 
   const skills = [
-    "JavaScript",
-    "Dart",
-    "React.js",
-    "React Native",
-    "Flutter",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Firebase",
-    "Git/GitHub",
+    { name: "JavaScript", icon: "fa-brands fa-js" },
+    { name: "Dart", icon: "fa-solid fa-code" },
+    { name: "React.js", icon: "fa-brands fa-react" },
+    { name: "React Native", icon: "fa-brands fa-react" },
+    { name: "Flutter", icon: "fa-solid fa-mobile-screen-button" },
+    { name: "Node.js", icon: "fa-brands fa-node-js" },
+    { name: "Express.js", icon: "fa-solid fa-server" },
+    { name: "MongoDB", icon: "fa-solid fa-database" },
+    { name: "Firebase", icon: "fa-solid fa-fire" },
+    { name: "Git/GitHub", icon: "fa-brands fa-github" },
   ];
 
   const webProjects = [
@@ -104,17 +104,6 @@ export default function Home() {
                 </a>
               ))}
             </div>
-
-            <div className="sectionCard">
-              <h2 className="sectionTitle">Technical Skills</h2>
-              <div className="skillsList">
-                {skills.map((skill, idx) => (
-                  <span className="skillTag" key={idx}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right Column */}
@@ -127,6 +116,18 @@ export default function Home() {
                 web & mobile apps. My aim is to deliver clean, user-friendly
                 solutions while continuously improving my skills.
               </p>
+            </div>
+
+            {/* Technical Skills Card (Moved Here) */}
+            <div className="sectionCard">
+              <h2 className="sectionTitle">Technical Skills</h2>
+              <div className="skillsList">
+                {skills.map((skill, idx) => (
+                  <span className="skillTag" key={idx}>
+                    <i className={skill.icon}></i> {skill.name}
+                  </span>
+                ))}
+              </div>
             </div>
 
             {/* Web Projects Card */}
